@@ -1,0 +1,245 @@
+html, body
+{
+    background: #000;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+app
+{
+    font-family: Arial, sans-serif;
+}
+
+.app_prefs .prefs
+{
+    visibility: visible;
+    transition: transform 0.2s ease;
+    transform: translate(0, 0);
+}
+
+.app_prefs .photo,
+.app_prefs .photo__control
+{
+    transform: translate(330px, 0);
+}
+
+navbar
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 40px;
+    background: blue;
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #487C3A;
+    text-shadow: 1px 1px 7px rgba(0,0,0,0.5);
+}
+
+navbar__sandwich
+{
+    font-size: 30px;
+    cursor: pointer;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 5px;
+    user-select: none;
+}
+
+navbar__text
+{
+    position: relative;
+    top: -2px;
+}
+
+.paranja
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+
+    z-index: 5000;
+    display: none;
+}
+
+.paranja_visible
+{
+    display: block;
+}
+
+.pbar
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background: orange;
+    height: 10px;
+}
+
+.photo
+{
+    position: absolute;
+    left: 10px;
+    top: 50px;
+
+    transition: transform 0.2s ease;
+    transform: translate(0, 0);
+}
+
+.photo__input
+{
+    position: relative;
+    margin-top: 5px;
+    background-color: transparent;
+    white-space: pre;
+    z-index: 10;
+}
+
+.photo__text-photo
+{
+    position: absolute;
+    z-index: 8;
+}
+
+.photo__control
+{
+    position: fixed;
+    z-index: 1000;
+    left: 300px;
+    top: 0;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.photo__generate,
+.photo__save
+{
+    font-size: 20px;
+}
+
+.photo__generate
+{
+    margin-right: 1em;
+}
+
+.photo__result
+{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    z-index: 10001;
+    border: 1px dotted #fff;
+    transform: translate(-50%, 0);
+}
+
+.prefs
+{
+    position: fixed;
+    left: 0;
+    top: 40px;
+    bottom: 0;
+    z-index: 1000;
+    padding: 10px;
+    background-color: #333;
+    width: 300px;
+    z-index: 10;
+    color: #fff;
+    border-right: 1px solid #444;
+    box-shadow: 10px 0px 5px 0px rgba(255, 255, 254, 0.1);
+    visibility: hidden;
+    transition: transform 0.2s ease, visibility 0.2s ease 0.2s;
+    transform: translate(-100%, 0);
+    overflow-y: auto;
+}
+
+.prefs__title
+{
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #444;
+    font-size: 18px;
+}
+
+.prefs table
+{
+    width: 100%;
+}
+
+.prefs td
+{
+    color: #fff;
+    padding-bottom: 10px;
+    vertical-align: top;
+    width: 50%;
+}
+
+.prefs td:first-child
+{
+    width: 40%;
+    padding-right: 10px;
+}
+
+.prefs__font-family
+{
+    width: 8em;
+}
+
+.prefs__bg-color, .prefs__color
+{
+    width: 4em;
+}
+
+.prefs__line-height, .prefs__font-size
+{
+    width: 4em;
+    margin-right: 5px;
+}
+
+.prefs__close
+{
+    font-size: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.prefs__properties
+{
+    border-spacing: 0 0;
+    border-collapse: separate;
+}
+
+.prefs__properties td
+{
+    padding-left: 0;
+}
+
+.prefs__width,
+.prefs__height
+{
+    width: 4em;
+}
+
+.prefs__text-photo
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    white-space: nowrap;
+}

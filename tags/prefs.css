@@ -1,0 +1,112 @@
+.prefs
+{
+    position: fixed;
+    z-index: 1000;
+    z-index: 10;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+
+    visibility: hidden;
+    overflow-y: auto;
+
+    width: 300px;
+    padding: 10px;
+
+    transition: transform .2s ease, visibility .2s ease .2s;
+    transform: translate(-100%, 0);
+
+    color: #fff;
+    border-right: 1px solid #444;
+    background-color: #333;
+    box-shadow: 10px 0 5px 0 rgba(255, 255, 254, .1);
+}
+
+.prefs__title
+{
+    font-size: 18px;
+
+    margin-top: .3em;
+    margin-bottom: 1em;
+    padding-bottom: .3em;
+
+    border-bottom: 1px solid #444;
+}
+
+.prefs table
+{
+    width: 100%;
+}
+
+.prefs td
+{
+    width: 50%;
+    padding-bottom: 10px;
+
+    vertical-align: top;
+
+    color: #fff;
+}
+
+.prefs td:first-child
+{
+    width: 40%;
+    padding-right: 10px;
+}
+
+.prefs__font-family
+{
+    width: 8em;
+}
+
+.prefs__bg-color,
+.prefs__color
+{
+    width: 4em;
+}
+
+.prefs__line-height,
+.prefs__font-size
+{
+    width: 4em;
+    margin-right: 5px;
+}
+
+.prefs__close
+{
+    font-size: 30px;
+    line-height: 30px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    cursor: pointer;
+}
+
+.prefs__properties
+{
+    border-spacing: 0 0;
+    border-collapse: separate;
+}
+
+.prefs__properties td
+{
+    padding-left: 0;
+}
+
+.prefs__width,
+.prefs__height
+{
+    width: 4em;
+}
+
+.prefs__text-photo
+{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    white-space: nowrap;
+}
