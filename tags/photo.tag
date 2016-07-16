@@ -1,12 +1,13 @@
 <photo>
     <div class="pbar" style="width: {pbarValue}%"></div>
 
-    <div class="photo__control">
-        <input type="button" class="photo__generate" onclick={onClickGenerate} value="Generate" />
-        <input type="button" class="photo__save" onclick={onClickSave} value="Save" />
-    </div>
+    <input type="button" class="photo__generate" onclick={onClickGenerate} value="Generate" />
 
-    <div class="photo__result"></div>
+    <div class="photo__result-container">
+        <input type="button" class="photo__save" onclick={onClickSave} value="Save" />
+        <div class="photo__result"></div>
+        <div class="photo__close">&times;</div>
+    </div>
 
     <div class="photo {'photo_left-pad': opts.prefs.visible}" style="background-color: {opts.prefs.backgroundColor}">
         <div class="photo__text-photo"></div>
@@ -28,14 +29,12 @@ var self = this,
     textPhoto = require('../scripts/text-photo');
 
 self.pbarValue = 0;
-var text = '';
-var exText = 'Hello world!!! Hello world!!! Hello world!!! Hello world!!! Hello world!!! Hello world!!! Hello world!!! Hello world!!! ! Hello world!!! Hello world!!! Hello world!!! Hello world!!!\n';
+self.text = '';
 
-for (var i = 0; i < 50; i++) {
-    text += exText;
-}
-
-self.text = text;
+self.on('changeText', function(text) {
+    self.text = text;
+    self.update();
+})
 
 showTextPhoto(data) {
     var div = document.createElement('div');

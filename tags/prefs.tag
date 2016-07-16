@@ -47,9 +47,75 @@
           </td>
       </tr>
     </table>
+
+    <div class="prefs__title">Fill</div>
+    <table class="prefs__properties">
+        <tr>
+            <td colspan="2">
+                <label><input type="radio" name="fill-value" value="0" onclick={onClickFillRadio} /> A-Z</label><br/>
+                <label><input type="radio" name="fill-value" value="1" onclick={onClickFillRadio} /> 0-9</label><br/>
+                <label><input type="radio" checked="checked" name="fill-value" value="2" onclick={onClickFillRadio} /> A-Za-z0-9</label><br/>
+                <label><input type="radio" name="fill-value" value="3" onclick={onClickFillRadio} /> <input type="text" class="prefs__pattern" placeholder="Input your pattern" onchange={onChangeFillPattern} value="{fillPattern}" /></label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Fill" onclick={onClickFill} />
+            </td>
+        </tr>
+    </table>
 </prefs>
 <script>
 var self = this;
+self.fillValue = '2';
+
+onClickFillRadio(e) {
+    self.fillValue = e.target.value;
+}
+
+onChangeFillPattern(e) {
+    self.fillPattern = e.target.value;
+}
+
+onClickFill(e) {
+    var symWidth = Math.floor(opts.data.width / opts.data.fontSize) * 3;
+    var symHeight = Math.floor(opts.data.height / opts.data.lineHeight) + 1;
+    var text = '';
+    var randomPattern;
+    var line;
+    switch (self.fillValue) {
+        case '0':
+            randomPattern = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            break;
+        case '1':
+            randomPattern = '0123456789';
+            break;
+        case '2':
+            randomPattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            break;
+    }
+
+    for (var i = 0; i < symHeight; i++) {
+        line = '';
+        for (var n = 0; n < symWidth; n++) {
+            if (self.fillValue === '3') {
+                line += self.fillPattern;
+                if (line.length > symWidth) {
+                    break;
+                }
+            } else {
+                line += getRandomSymbol(randomPattern);
+            }
+        }
+        text += line + '\n';
+    }
+
+    self.trigger('changeText', text);
+}
+
+function getRandomSymbol(str) {
+    return str[Math.floor(Math.random() * str.length)];
+}
 
 onChangeWidth(e) {
     opts.data.width = e.target.value;

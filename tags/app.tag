@@ -20,7 +20,7 @@ self.prefs = {
     url: 'images/red_flower.jpg'
 };
 
-self.showPrefs = false;
+self.showPrefs = true;
 
 onClickSandwich(e) {
     self.showPrefs = !self.showPrefs;
@@ -47,5 +47,10 @@ self.tags.photo.on('hide-paranja', function() {
 self.tags.prefs.on('change', function() {
     self.tags.photo.update();
 });
+
+self.tags.prefs.on('changeText', function(data) {
+    self.tags.photo.trigger('changeText', data);
+});
+
 </script>
 </app>

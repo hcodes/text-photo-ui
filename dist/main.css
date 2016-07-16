@@ -1,9 +1,12 @@
-html, body
+html,
+body
 {
-    background: #000;
+    font-family: Arial, sans-serif;
+
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+
+    background: #000;
 }
 
 app
@@ -14,7 +17,8 @@ app
 .app_prefs .prefs
 {
     visibility: visible;
-    transition: transform 0.2s ease;
+
+    transition: transform .2s ease;
     transform: translate(0, 0);
 }
 
@@ -26,30 +30,37 @@ app
 
 navbar
 {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    height: 40px;
-    background: blue;
-    vertical-align: middle;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
     font-size: 20px;
     line-height: 40px;
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 40px;
+
+    vertical-align: middle;
+
     color: #fff;
-    font-size: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #487C3A;
-    text-shadow: 1px 1px 7px rgba(0,0,0,0.5);
+    background: blue;
+    background-color: #487c3a;
+    text-shadow: 1px 1px 7px rgba(0,0,0,.5);
 }
 
 navbar__sandwich
 {
     font-size: 30px;
-    cursor: pointer;
+
     display: inline;
-    margin-left: 10px;
+
     margin-right: 5px;
+    margin-left: 10px;
+
+    cursor: pointer;
     user-select: none;
 }
 
@@ -62,14 +73,16 @@ navbar__text
 .paranja
 {
     position: fixed;
-    left: 0;
+    z-index: 5000;
     top: 0;
+    left: 0;
+
+    display: none;
+
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
 
-    z-index: 5000;
-    display: none;
+    background: rgba(0, 0, 0, .8);
 }
 
 .paranja_visible
@@ -80,30 +93,35 @@ navbar__text
 .pbar
 {
     position: fixed;
-    left: 0;
-    top: 0;
     z-index: 10000;
-    background: orange;
+    top: 0;
+    left: 0;
+
     height: 10px;
+
+    background: orange;
 }
 
 .photo
 {
     position: absolute;
-    left: 10px;
     top: 50px;
+    left: 10px;
 
-    transition: transform 0.2s ease;
+    transition: transform .2s ease;
     transform: translate(0, 0);
 }
 
 .photo__input
 {
     position: relative;
-    margin-top: 5px;
-    background-color: transparent;
-    white-space: pre;
     z-index: 10;
+
+    margin-top: 5px;
+
+    white-space: pre;
+
+    background-color: transparent;
 }
 
 .photo__text-photo
@@ -112,14 +130,13 @@ navbar__text
     z-index: 8;
 }
 
-.photo__control
+.photo__generate
 {
+    margin-right: 1em;
     position: fixed;
     z-index: 1000;
-    left: 300px;
     top: 0;
-    padding: 5px;
-    background-color: rgba(0,0,0,0.5);
+    left: 300px;
 }
 
 .photo__generate,
@@ -128,49 +145,62 @@ navbar__text
     font-size: 20px;
 }
 
-.photo__generate
-{
-    margin-right: 1em;
-}
-
 .photo__result
 {
-    display: none;
     position: absolute;
-    left: 50%;
-    top: 40px;
     z-index: 10001;
-    border: 1px dotted #fff;
+    top: 40px;
+    left: 50%;
+
+    display: none;
+
     transform: translate(-50%, 0);
+
+    border: 1px dotted #fff;
 }
 
+.photo__close
+{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    font-size: 30px;
+    line-height: 30px;
+    color: white;
+}
 .prefs
 {
     position: fixed;
-    left: 0;
+    z-index: 1000;
+    z-index: 10;
     top: 40px;
     bottom: 0;
-    z-index: 1000;
-    padding: 10px;
-    background-color: #333;
+    left: 0;
+
+    visibility: hidden;
+    overflow-y: auto;
+
     width: 300px;
-    z-index: 10;
+    padding: 10px;
+
+    transition: transform .2s ease, visibility .2s ease .2s;
+    transform: translate(-100%, 0);
+
     color: #fff;
     border-right: 1px solid #444;
-    box-shadow: 10px 0px 5px 0px rgba(255, 255, 254, 0.1);
-    visibility: hidden;
-    transition: transform 0.2s ease, visibility 0.2s ease 0.2s;
-    transform: translate(-100%, 0);
-    overflow-y: auto;
+    background-color: #333;
+    box-shadow: 10px 0 5px 0 rgba(255, 255, 254, .1);
 }
 
 .prefs__title
 {
-    margin-top: 0.3em;
-    margin-bottom: 1em;
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid #444;
     font-size: 18px;
+
+    margin-top: .3em;
+    margin-bottom: 1em;
+    padding-bottom: .3em;
+
+    border-bottom: 1px solid #444;
 }
 
 .prefs table
@@ -180,10 +210,12 @@ navbar__text
 
 .prefs td
 {
-    color: #fff;
-    padding-bottom: 10px;
-    vertical-align: top;
     width: 50%;
+    padding-bottom: 10px;
+
+    vertical-align: top;
+
+    color: #fff;
 }
 
 .prefs td:first-child
@@ -197,12 +229,14 @@ navbar__text
     width: 8em;
 }
 
-.prefs__bg-color, .prefs__color
+.prefs__bg-color,
+.prefs__color
 {
     width: 4em;
 }
 
-.prefs__line-height, .prefs__font-size
+.prefs__line-height,
+.prefs__font-size
 {
     width: 4em;
     margin-right: 5px;
@@ -212,9 +246,11 @@ navbar__text
 {
     font-size: 30px;
     line-height: 30px;
+
     position: absolute;
-    right: 5px;
     top: 5px;
+    right: 5px;
+
     cursor: pointer;
 }
 
@@ -238,8 +274,9 @@ navbar__text
 .prefs__text-photo
 {
     position: absolute;
-    left: 0;
-    top: 0;
     z-index: 1000;
+    top: 0;
+    left: 0;
+
     white-space: nowrap;
 }

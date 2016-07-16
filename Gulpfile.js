@@ -17,7 +17,7 @@ gulp.task('browserify', function () {
         transform: [riotify]
     }).bundle()
     // take the end result and place it to dist folder
-    .pipe(source('main.bundle.js'))
+    .pipe(source('main.js'))
     .pipe(gulp.dest('./dist/'));
 });
 

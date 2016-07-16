@@ -26,27 +26,19 @@
     z-index: 8;
 }
 
-.photo__control
+.photo__generate
 {
+    margin-right: 1em;
     position: fixed;
     z-index: 1000;
     top: 0;
     left: 300px;
-
-    padding: 5px;
-
-    background-color: rgba(0,0,0,.5);
 }
 
 .photo__generate,
 .photo__save
 {
     font-size: 20px;
-}
-
-.photo__generate
-{
-    margin-right: 1em;
 }
 
 .photo__result
@@ -61,4 +53,14 @@
     transform: translate(-50%, 0);
 
     border: 1px dotted #fff;
+}
+
+.photo__close
+{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    font-size: 30px;
+    line-height: 30px;
+    color: white;
 }
